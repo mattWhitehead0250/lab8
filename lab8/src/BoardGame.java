@@ -96,4 +96,8 @@ public class BoardGame {
 	public Set<GamePiece> getPlayerPieces(){
 		return new HashSet<GamePiece>(playerPieces.values());
 	}
+	
+	public Location getPlayerLocation(String name) {
+		return playerLocation.get(name);
+	}
 	}

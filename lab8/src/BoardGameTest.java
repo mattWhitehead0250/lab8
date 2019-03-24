@@ -116,4 +116,16 @@ public class BoardGameTest {
         Assert.assertEquals("Wrong location", 3, game1.getPlayerLocations().size());
         Assert.assertEquals("Wrong location", true, game1.getPlayerLocations().contains(Location.CONSERVATORY));
 	}
+	
+	@Test
+	public void getPlayerPiecesTest() {
+		BoardGame game1 = new BoardGame();
+		
+		game1.addPlayer("Matt", GamePiece.BLUE_BOOT, Location.BALLROOM);
+		game1.addPlayer("Ryan", GamePiece.BLUE_RACER, Location.BILLIARD_ROOM);
+		game1.addPlayer("Katie", GamePiece.MAGENTA_RACER, Location.CONSERVATORY);
+		
+		Assert.assertEquals("Wrong Location", 3, game1.getPlayerPieces().size());
+		Assert.assertEquals("Wrong Location", true, game1.getPlayerPieces().contains(GamePiece.BLUE_RACER));
+	}
 }
