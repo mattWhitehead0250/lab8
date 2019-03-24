@@ -33,8 +33,6 @@ public class BoardGameTest {
 		game1.movePlayer("Matt", Location.BILLIARD_ROOM);
 		Assert.assertEquals("Wrong location", Location.BILLIARD_ROOM, game1.playerLocation.get("Matt"));
 	}
-<<<<<<< HEAD
-=======
 	
 	//return to figure out why this wont pass
 	@Test
@@ -98,13 +96,24 @@ public class BoardGameTest {
 	@Test
     public void getPlayersTest() 
     {
-        BoardGame bg = new BoardGame();
-        bg.addPlayer("Matt", GamePiece.BLUE_BOOT, Location.BALLROOM);
-        bg.addPlayer("Ryan", GamePiece.BLUE_RACER, Location.BILLIARD_ROOM);
-        bg.addPlayer("Katie", GamePiece.MAGENTA_RACER, Location.CONSERVATORY);
+        BoardGame game1 = new BoardGame();
+        game1.addPlayer("Matt", GamePiece.BLUE_BOOT, Location.BALLROOM);
+        game1.addPlayer("Ryan", GamePiece.BLUE_RACER, Location.BILLIARD_ROOM);
+        game1.addPlayer("Katie", GamePiece.MAGENTA_RACER, Location.CONSERVATORY);
         
-        Assert.assertEquals("Wrong location", 3, bg.getPlayers().size());
-        Assert.assertEquals("Wrong location", "Matt", bg.getPlayers().stream().findFirst().get());
+        Assert.assertEquals("Wrong location", 3, game1.getPlayers().size());
+        Assert.assertEquals("Wrong location", "Matt", game1.getPlayers().stream().findFirst().get());
     }
->>>>>>> ebfa6c2... More changes
+	
+	@Test
+	public void getPlayerLocationsTest() {
+		BoardGame game1 = new BoardGame();
+        
+        game1.addPlayer("Matt", GamePiece.BLUE_BOOT, Location.BALLROOM);
+        game1.addPlayer("Ryan", GamePiece.BLUE_RACER, Location.BILLIARD_ROOM);
+        game1.addPlayer("Katie", GamePiece.MAGENTA_RACER, Location.CONSERVATORY);
+        
+        Assert.assertEquals("Wrong location", 3, game1.getPlayerLocations().size());
+        Assert.assertEquals("Wrong location", true, game1.getPlayerLocations().contains(Location.CONSERVATORY));
+	}
 }
