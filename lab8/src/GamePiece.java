@@ -30,6 +30,6 @@ public enum GamePiece {
 	 }
 	 
 	 public String toString() {
-		 return String.format("%s: a %s %s with priority %d", this.name(), this.appearance.getColor(), this.appearance.getShape(), this.priority;);
+		 return String.format("%s: a %s %s with priority %d", this.name(), this.appearance.getColor(), this.appearance.getShape(), this.priority);
 	 }
 }
