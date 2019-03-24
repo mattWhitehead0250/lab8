@@ -26,5 +26,11 @@ public class BoardGameTest {
 		Assert.assertEquals("Wrong player / info", false, game1.addPlayer("Matt", GamePiece.BLUE_BOOT, Location.BALLROOM));
 	}
 	
-	
+	@Test
+	public void movePlayerTest() {
+		BoardGame game1 = new BoardGame();
+		game1.addPlayer("Matt", GamePiece.BLUE_BOOT, Location.BALLROOM);
+		game1.movePlayer("Matt", Location.BILLIARD_ROOM);
+		Assert.assertEquals("Wrong location", Location.BILLIARD_ROOM, game1.playerLocation.get("Matt"));
+	}
 }
