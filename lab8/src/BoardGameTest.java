@@ -1,6 +1,5 @@
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class BoardGameTest {
 
@@ -46,10 +45,10 @@ public class BoardGameTest {
         game1.addPlayer("Katie", GamePiece.RED_RACER, Location.BILLIARD_ROOM);
 
         String[] players2 = {"Katie", "Matt"};
-        //game1.movePlayer("Matt", Location.BILLIARD_ROOM);
+        game1.movePlayer("Matt", Location.BILLIARD_ROOM);
 
-        Assert.assertEquals(new String[] {"Matt", "Ryan"}, game1.moveTwoPlayers(players, locations));
-        Assert.assertEquals(new String[] {"Katie", "Matt"}, game1.moveTwoPlayers(players2, locations));
+        Assert.assertArrayEquals(new String[] {"Matt", "Ryan"}, game1.moveTwoPlayers(players, locations));
+        Assert.assertArrayEquals(new String[] {"Katie", "Matt"}, game1.moveTwoPlayers(players2, locations));
 	}
 	
 	@Test
