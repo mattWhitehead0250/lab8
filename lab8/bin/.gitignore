@@ -1,9 +1,9 @@
 /BoardGame.class
+/BoardGameTest.class
 /Color.class
+/ColorShapeGamePieceTest.class
 /Driver.class
 /GamePiece.class
 /GamePieceAppearance.class
 /Location.class
 /Shape.class
-/BoardGameTest.class
-/ColorShapeGamePieceTest.class
