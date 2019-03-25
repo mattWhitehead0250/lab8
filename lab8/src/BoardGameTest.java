@@ -30,7 +30,7 @@ public class BoardGameTest {
 		BoardGame bg = new BoardGame();
 		bg.addPlayer("Matt", GamePiece.BLUE_BOOT, Location.BALLROOM);
 		bg.movePlayer("Matt", Location.BILLIARD_ROOM);
-		Assert.assertEquals("Wrong location", Location.BILLIARD_ROOM, bg.playerLocation.get("Matt"));
+		Assert.assertEquals("Wrong location", Location.BILLIARD_ROOM, bg.playerLocations.get("Matt"));
 	}
 	
 	//return to figure out why this wont pass
@@ -57,7 +57,17 @@ public class BoardGameTest {
 		
 		bg.addPlayer("Matt", GamePiece.BLUE_BOOT, Location.BALLROOM);
 		bg.movePlayer("Matt", Location.BILLIARD_ROOM);
-		Assert.assertEquals(bg.playerLocation.get("Matt"), bg.getPlayerLocation("Matt"));
+		Assert.assertEquals(bg.playerLocations.get("Matt"), bg.getplayerLocations("Matt"));
+		
+	}
+	
+	@Test
+	public void getPlayersLocationTest() {
+		BoardGame bg = new BoardGame();
+		
+		bg.addPlayer("Matt", GamePiece.BLUE_BOOT, Location.BALLROOM);
+		bg.movePlayer("Matt", Location.BILLIARD_ROOM);
+		Assert.assertEquals(bg.playerLocations.get("Matt"), bg.getplayerLocations("Matt"));
 		
 	}
 	
